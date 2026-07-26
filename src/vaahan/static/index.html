@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="SETU understands Hinglish support messages. VAHAAN serves it safely.">
+    <title>SETU × VAHAAN</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="/">SETU <span>×</span> VAHAAN</a>
+      <nav>
+        <a href="#evidence">Evidence</a>
+        <a href="/docs">API</a>
+        <a href="https://github.com/cyash24f3" target="_blank" rel="noreferrer">Source</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">HINGLISH SUPPORT INTELLIGENCE · LOCAL QLORA · PORTABLE SERVING</div>
+        <h1>One message.<br><em>Ten reliable signals.</em></h1>
+        <p class="lede">
+          SETU turns noisy English and Hinglish e-commerce messages into strict JSON.
+          VAHAAN pins, serves, validates, measures, and monitors the model release.
+        </p>
+        <div class="chips">
+          <span>Qwen3.5-2B</span><span>QLoRA</span><span>GGUF</span><span>FastAPI</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-labelledby="demo-title">
+        <div class="composer">
+          <div class="section-label">LIVE INFERENCE</div>
+          <h2 id="demo-title">Analyze a support message</h2>
+          <p class="hint">Use fictional details only. Free hosting may need a cold start.</p>
+          <textarea id="message" maxlength="600">I have an issue. UPI keeps failing at checkout. GPay payment use kiya tha. bas sahi details bata do. please isko jaldi dekhna</textarea>
+          <div class="examples" id="examples">
+            <button data-message="I have an issue. UPI keeps failing at checkout. GPay payment use kiya tha. bas sahi details bata do. please isko jaldi dekhna">UPI failed</button>
+            <button data-message="size fit nahi hai exchange karna hai. I want this item replaced. item is Prestige pressure cooker">Wrong size</button>
+            <button data-message="waise ek baat poochni thi, Mumbai ka weather kaisa hai — just curious">Out of domain</button>
+          </div>
+          <button class="primary" id="analyze">Analyze message <span>→</span></button>
+          <p id="status" class="status">Model release information is loading.</p>
+        </div>
+
+        <div class="result-panel">
+          <div class="result-head">
+            <div>
+              <div class="section-label">VALIDATED OUTPUT</div>
+              <h2>Structured result</h2>
+            </div>
+            <span class="ready" id="ready">CHECKING</span>
+          </div>
+          <div id="result" class="result-grid empty">
+            <div class="empty-state">Run an example to inspect all ten fields.</div>
+          </div>
+          <div id="metadata" class="metadata"></div>
+        </div>
+      </section>
+
+      <section class="evidence" id="evidence">
+        <div>
+          <div class="section-label">MEASURED, NOT MARKETED</div>
+          <h2>Release evidence</h2>
+        </div>
+        <div class="evidence-grid">
+          <article><strong>6,000</strong><span>synthetic records with group-aware 80/10/10 splits</span></article>
+          <article><strong>96.33%</strong><span>schema-valid MLX outputs on 600 held-out examples</span></article>
+          <article><strong>94.33%</strong><span>intent accuracy for the selected adapter</span></article>
+          <article><strong>8.99/10</strong><span>mean fields correct per held-out message</span></article>
+        </div>
+        <p class="limitation">
+          Known limitation: the dataset is synthetic and language-mix classification is the weakest field.
+          This is a portfolio system, not a production customer-support service.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>Built by Yash Chavan</span>
+      <span>SETU model research · VAHAAN serving engineering</span>
+    </footer>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

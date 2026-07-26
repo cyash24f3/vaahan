@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vaahan-ai"
+version = "0.1.0"
+description = "Portable serving and release engineering for SETU"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.116,<1",
+  "httpx>=0.28,<1",
+  "huggingface-hub>=0.36,<1",
+  "prometheus-client>=0.22,<1",
+  "pydantic>=2.11,<3",
+  "pyyaml>=6,<7",
+  "uvicorn[standard]>=0.35,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.17,<2",
+  "pytest>=8.4,<10",
+  "pytest-asyncio>=1,<2",
+  "ruff>=0.12,<1",
+  "types-PyYAML>=6,<7",
+]
+
+[project.scripts]
+vaahan = "vaahan.app:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+vaahan = ["py.typed", "static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["vaahan"]
+
+[[tool.mypy.overrides]]
+module = ["prometheus_client.*", "yaml.*"]
+ignore_missing_imports = true

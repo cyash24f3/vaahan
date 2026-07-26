@@ -1,0 +1,23 @@
+release: setu-2b-v1.0.0
+model_id: Qwen/Qwen3.5-2B
+quantization: Q8_0 + LoRA F16
+schema_version: "2.1"
+prompt_version: setu-json-v2
+base:
+  repo_id: bartowski/Qwen_Qwen3.5-2B-GGUF
+  revision: 7d26695454df6de5fbcce2e58681e62dae06ce43
+  filename: Qwen_Qwen3.5-2B-Q8_0.gguf
+  sha256: be647507ce6cde229b838924d47bfff9763171105563f7f908670dae57c4dbe2
+adapter:
+  path: release/artifacts/setu-qwen35-2b-lora-f16.gguf
+  sha256: 2fc3026f62bb8f1b4ecfb40190d6270870a54bec426833b10ba7fb3e75e20a33
+runtime:
+  llama_cpp_revision: 720d7fa4097f76e5d0eade5a92c1df87c1faf9d9
+  context_size: 512
+  max_output_tokens: 180
+  threads: 2
+  parallel: 1
+  request_timeout_seconds: 90
+evaluation_report: SETU/reports/qwen35_2b_q8_equivalence_50.json
+predecessor: null
+
